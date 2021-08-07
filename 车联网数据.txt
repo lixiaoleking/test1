@@ -1,0 +1,51 @@
+<table>
+tb_inv_comm_prod_day
+tb_inv_comm_prod_month
+tb_inv_comm_realname_month
+</table>
+
+<sql>
+
+
+</sql>
+- select * from hyxt_dcp where cust_id = "980000083637" and yyyymmdd='20210402'; - 通用
+- 总执行时间: 67.83 秒
+
+公司
+http://10.251.44.67:15311/dacp/login
+lixl_sx fm02fs*GzGA6Y^Vp
+10.251.44.85 9019
+wss_wlw_out_wss / O0t1Z5#FEU43#tmh  
+
+
+数据库名 ubehav
+表名 IOT_NE_4G_MEDI  iot_ne.iot_ne_4g_main
+
+select * from iot_ne.iot_ne_4g_main;
+
+select * from wss.tb_inv_comm_prod_day where prod_inst_id = 251123478600 and yymmdd=20190624
+
+http://api.cellocation.com:82/cell/?mcc=460&mnc=1&lac=4301&ci=20986&output=xml
+
+
+
+drop table test.temp_lvgf_city_dcp0722;
+create table test.temp_lvgf_city_dcp0722 as
+select 
+(case when substr(servedmsisdn,1, 2) = '86' then substring(servedmsisdn, 3) 
+when substring(servedmsisdn,1, 4) = '1986' then substring(servedmsisdn, 5)
+when substring(servedmsisdn,1, 4) = '0086' then substring(servedmsisdn, 5) else servedmsisdn end) msisdn,
+servedimeisv,
+upper(substr(main_userlocation_hex,-7,5)) enodebid ,
+upper(substr(main_userlocation_hex,-2,2)) cellid,
+sgsnAddress_iPBinV4 sgw_ip,
+recordopeningtime
+from iot_ne.iot_ne_egsn_main where yyyymmdd =20210720;
+
+提一个需求，帮我们写一下
+
+查询 tb_inv_comm_prod_day 用户基本信息表里面，属于通用公司 and yyyymmdd = 20210608 and status_name = 在用 的100个acc_num,
+并且连接到 iot_ne.iot_ne_egsn_main 主表的servedmsisdn字段。导出成一个文件给我们看一下。
+
+
+
